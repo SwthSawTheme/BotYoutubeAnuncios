@@ -27,7 +27,7 @@ O **BotYoutubeAnuncios** é um programa simples projetado para automatizar a int
 
 ```bash
 python3 main.py
-
+```
 ## Notas Importantes
 
 - Este bot é uma automação simples e pode não funcionar corretamente se houver alterações na interface do YouTube.
