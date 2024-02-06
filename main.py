@@ -13,21 +13,17 @@ class Bot:
         self.janela_parada()
 
     def verificar_e_clicar(self):
-        # Loop para verificar e clicar enquanto o evento de parar não for acionado
+        imagens = ["pular1.png", "pular2.png", "pular3.png","pular4.png","pular5.png"]
         while not self.parar_event.is_set():
-            try:
-                # Procura a imagem na tela e obtém a posição central se encontrada
-                ico = os.path.join("assets/pular.png")
-                position = py.locateCenterOnScreen(ico, confidence=0.6)
-                if position:
-                    # Clica na posição encontrada
-                    py.click(position)
-                    time.sleep(1)  # Adiciona um atraso após o clique
-                    print('Imagem Encontrada!')
-            except py.ImageNotFoundException:
-                # Tratamento da exceção caso a imagem não seja encontrada
-                time.sleep(1)
-                print('Não foi encontrado imagem na tela!')
+            for imagem in imagens:
+                try:
+                    ico = os.path.join("assets/", imagem)
+                    position = py.locateCenterOnScreen(ico, confidence=0.7)
+                    if position:
+                        py.click(position)
+                        time.sleep(0.3)
+                except py.ImageNotFoundException:
+                    time.sleep(0.3)
 
     def janela_parada(self):
         # Configuração da janela de controle usando Tkinter
@@ -46,13 +42,11 @@ class Bot:
 
     def parar_bot(self):
         # Função chamada quando o bot é parado pelo usuário
-        print('Bot encerrado pelo usuário.')
         self.parar_event.set()  # Sinaliza a parada do bot
         self.root.destroy()     # Fecha a janela
 
     def fechar_janela(self):
         # Função chamada quando a janela é fechada pelo usuário
-        print('Bot encerrado pelo usuário.')
         self.parar_event.set()  # Sinaliza a parada do bot
         self.root.destroy()     # Fecha a janela
 
