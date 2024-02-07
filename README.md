@@ -2,6 +2,10 @@
 
 O **BotYoutubeAnuncios** é um programa simples projetado para automatizar a interação com anúncios em vídeos do YouTube. Ele utiliza a biblioteca PyAutoGUI para localizar e clicar em uma imagem específica na tela, simulando a interação do usuário.
 
+## Download
+
+- https://drive.google.com/drive/folders/1D3OpY7DOlfYcUVoIXiEe6yMUIxNncQ7E?usp=sharing
+
 ## Requisitos
 
 - Python 3.x
