@@ -13,7 +13,7 @@ class Bot:
         self.janela_parada()
 
     def verificar_e_clicar(self):
-        imagens = ["pular1.png", "pular2.png", "pular3.png","pular4.png","pular5.png"]
+        imagens = ["pular1.png", "pular2.png", "pular3.png","pular4.png","pular5.png","pular6.png","pular7.png","pular8.png","pular9.png","pular10.png"]
         while not self.parar_event.is_set():
             for imagem in imagens:
                 try:
@@ -21,9 +21,9 @@ class Bot:
                     position = py.locateCenterOnScreen(ico, confidence=0.7)
                     if position:
                         py.click(position)
-                        time.sleep(0.3)
+                        time.sleep(0.5)
                 except py.ImageNotFoundException:
-                    time.sleep(0.3)
+                    time.sleep(0.5)
 
     def janela_parada(self):
         # Configuração da janela de controle usando Tkinter
